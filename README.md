@@ -13,3 +13,4 @@ Simple scrolling page view container for UIViewControllers modelled after UIPage
 3. Add `libMNPageViewController.a` to the Link Binary With Libraries section of you Build Phases
 
 4. `#import <MNPageViewController/MNPageViewController.h>`
+
