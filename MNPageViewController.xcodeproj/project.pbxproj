@@ -16,6 +16,7 @@
 		3945BE62179DBF9700AB3981 /* libMNPageViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945BE4A179DBF9700AB3981 /* libMNPageViewController.a */; };
 		3945BE68179DBF9700AB3981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3945BE66179DBF9700AB3981 /* InfoPlist.strings */; };
 		3945BE6A179DBF9700AB3981 /* MNPageViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3945BE69179DBF9700AB3981 /* MNPageViewControllerTests.m */; };
+		3945BE75179DC04100AB3981 /* MNQueuingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3945BE74179DC04100AB3981 /* MNQueuingScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3945BE65179DBF9700AB3981 /* MNPageViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MNPageViewControllerTests-Info.plist"; sourceTree = "<group>"; };
 		3945BE67179DBF9700AB3981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3945BE69179DBF9700AB3981 /* MNPageViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNPageViewControllerTests.m; sourceTree = "<group>"; };
+		3945BE73179DC04100AB3981 /* MNQueuingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNQueuingScrollView.h; sourceTree = "<group>"; };
+		3945BE74179DC04100AB3981 /* MNQueuingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNQueuingScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 			children = (
 				3945BE52179DBF9700AB3981 /* MNPageViewController.h */,
 				3945BE54179DBF9700AB3981 /* MNPageViewController.m */,
+				3945BE73179DC04100AB3981 /* MNQueuingScrollView.h */,
+				3945BE74179DC04100AB3981 /* MNQueuingScrollView.m */,
 				3945BE50179DBF9700AB3981 /* Supporting Files */,
 			);
 			path = MNPageViewController;
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3945BE55179DBF9700AB3981 /* MNPageViewController.m in Sources */,
+				3945BE75179DC04100AB3981 /* MNQueuingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +336,7 @@
 				DSTROOT = /tmp/MNPageViewController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNPageViewController/MNPageViewController-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -342,6 +349,7 @@
 				DSTROOT = /tmp/MNPageViewController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNPageViewController/MNPageViewController-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -403,6 +411,7 @@
 				3945BE6F179DBF9700AB3981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3945BE70179DBF9700AB3981 /* Build configuration list for PBXNativeTarget "MNPageViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +420,7 @@
 				3945BE72179DBF9700AB3981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
