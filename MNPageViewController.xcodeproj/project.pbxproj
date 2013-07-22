@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3945BE4E179DBF9700AB3981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945BE4D179DBF9700AB3981 /* Foundation.framework */; };
+		3945BE53179DBF9700AB3981 /* MNPageViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3945BE52179DBF9700AB3981 /* MNPageViewController.h */; };
+		3945BE55179DBF9700AB3981 /* MNPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3945BE54179DBF9700AB3981 /* MNPageViewController.m */; };
+		3945BE5C179DBF9700AB3981 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945BE5B179DBF9700AB3981 /* XCTest.framework */; };
+		3945BE5D179DBF9700AB3981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945BE4D179DBF9700AB3981 /* Foundation.framework */; };
+		3945BE5F179DBF9700AB3981 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945BE5E179DBF9700AB3981 /* UIKit.framework */; };
+		3945BE62179DBF9700AB3981 /* libMNPageViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945BE4A179DBF9700AB3981 /* libMNPageViewController.a */; };
+		3945BE68179DBF9700AB3981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3945BE66179DBF9700AB3981 /* InfoPlist.strings */; };
+		3945BE6A179DBF9700AB3981 /* MNPageViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3945BE69179DBF9700AB3981 /* MNPageViewControllerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3945BE60179DBF9700AB3981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3945BE42179DBF9700AB3981 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3945BE49179DBF9700AB3981;
+			remoteInfo = MNPageViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3945BE48179DBF9700AB3981 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3945BE53179DBF9700AB3981 /* MNPageViewController.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3945BE4A179DBF9700AB3981 /* libMNPageViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMNPageViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3945BE4D179DBF9700AB3981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3945BE51179DBF9700AB3981 /* MNPageViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MNPageViewController-Prefix.pch"; sourceTree = "<group>"; };
+		3945BE52179DBF9700AB3981 /* MNPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNPageViewController.h; sourceTree = "<group>"; };
+		3945BE54179DBF9700AB3981 /* MNPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNPageViewController.m; sourceTree = "<group>"; };
+		3945BE5A179DBF9700AB3981 /* MNPageViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MNPageViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3945BE5B179DBF9700AB3981 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3945BE5E179DBF9700AB3981 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3945BE65179DBF9700AB3981 /* MNPageViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MNPageViewControllerTests-Info.plist"; sourceTree = "<group>"; };
+		3945BE67179DBF9700AB3981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3945BE69179DBF9700AB3981 /* MNPageViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNPageViewControllerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3945BE47179DBF9700AB3981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3945BE4E179DBF9700AB3981 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3945BE57179DBF9700AB3981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3945BE5C179DBF9700AB3981 /* XCTest.framework in Frameworks */,
+				3945BE5F179DBF9700AB3981 /* UIKit.framework in Frameworks */,
+				3945BE62179DBF9700AB3981 /* libMNPageViewController.a in Frameworks */,
+				3945BE5D179DBF9700AB3981 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3945BE41179DBF9700AB3981 = {
+			isa = PBXGroup;
+			children = (
+				3945BE4F179DBF9700AB3981 /* MNPageViewController */,
+				3945BE63179DBF9700AB3981 /* MNPageViewControllerTests */,
+				3945BE4C179DBF9700AB3981 /* Frameworks */,
+				3945BE4B179DBF9700AB3981 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3945BE4B179DBF9700AB3981 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3945BE4A179DBF9700AB3981 /* libMNPageViewController.a */,
+				3945BE5A179DBF9700AB3981 /* MNPageViewControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3945BE4C179DBF9700AB3981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3945BE4D179DBF9700AB3981 /* Foundation.framework */,
+				3945BE5B179DBF9700AB3981 /* XCTest.framework */,
+				3945BE5E179DBF9700AB3981 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3945BE4F179DBF9700AB3981 /* MNPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3945BE52179DBF9700AB3981 /* MNPageViewController.h */,
+				3945BE54179DBF9700AB3981 /* MNPageViewController.m */,
+				3945BE50179DBF9700AB3981 /* Supporting Files */,
+			);
+			path = MNPageViewController;
+			sourceTree = "<group>";
+		};
+		3945BE50179DBF9700AB3981 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3945BE51179DBF9700AB3981 /* MNPageViewController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3945BE63179DBF9700AB3981 /* MNPageViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3945BE69179DBF9700AB3981 /* MNPageViewControllerTests.m */,
+				3945BE64179DBF9700AB3981 /* Supporting Files */,
+			);
+			path = MNPageViewControllerTests;
+			sourceTree = "<group>";
+		};
+		3945BE64179DBF9700AB3981 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3945BE65179DBF9700AB3981 /* MNPageViewControllerTests-Info.plist */,
+				3945BE66179DBF9700AB3981 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3945BE49179DBF9700AB3981 /* MNPageViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3945BE6D179DBF9700AB3981 /* Build configuration list for PBXNativeTarget "MNPageViewController" */;
+			buildPhases = (
+				3945BE46179DBF9700AB3981 /* Sources */,
+				3945BE47179DBF9700AB3981 /* Frameworks */,
+				3945BE48179DBF9700AB3981 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MNPageViewController;
+			productName = MNPageViewController;
+			productReference = 3945BE4A179DBF9700AB3981 /* libMNPageViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3945BE59179DBF9700AB3981 /* MNPageViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3945BE70179DBF9700AB3981 /* Build configuration list for PBXNativeTarget "MNPageViewControllerTests" */;
+			buildPhases = (
+				3945BE56179DBF9700AB3981 /* Sources */,
+				3945BE57179DBF9700AB3981 /* Frameworks */,
+				3945BE58179DBF9700AB3981 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3945BE61179DBF9700AB3981 /* PBXTargetDependency */,
+			);
+			name = MNPageViewControllerTests;
+			productName = MNPageViewControllerTests;
+			productReference = 3945BE5A179DBF9700AB3981 /* MNPageViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3945BE42179DBF9700AB3981 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = min;
+			};
+			buildConfigurationList = 3945BE45179DBF9700AB3981 /* Build configuration list for PBXProject "MNPageViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3945BE41179DBF9700AB3981;
+			productRefGroup = 3945BE4B179DBF9700AB3981 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3945BE49179DBF9700AB3981 /* MNPageViewController */,
+				3945BE59179DBF9700AB3981 /* MNPageViewControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3945BE58179DBF9700AB3981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3945BE68179DBF9700AB3981 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3945BE46179DBF9700AB3981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3945BE55179DBF9700AB3981 /* MNPageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3945BE56179DBF9700AB3981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3945BE6A179DBF9700AB3981 /* MNPageViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3945BE61179DBF9700AB3981 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3945BE49179DBF9700AB3981 /* MNPageViewController */;
+			targetProxy = 3945BE60179DBF9700AB3981 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3945BE66179DBF9700AB3981 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3945BE67179DBF9700AB3981 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3945BE6B179DBF9700AB3981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3945BE6C179DBF9700AB3981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3945BE6E179DBF9700AB3981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MNPageViewController.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MNPageViewController/MNPageViewController-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3945BE6F179DBF9700AB3981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MNPageViewController.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MNPageViewController/MNPageViewController-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3945BE71179DBF9700AB3981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MNPageViewController/MNPageViewController-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MNPageViewControllerTests/MNPageViewControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3945BE72179DBF9700AB3981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MNPageViewController/MNPageViewController-Prefix.pch";
+				INFOPLIST_FILE = "MNPageViewControllerTests/MNPageViewControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3945BE45179DBF9700AB3981 /* Build configuration list for PBXProject "MNPageViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3945BE6B179DBF9700AB3981 /* Debug */,
+				3945BE6C179DBF9700AB3981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3945BE6D179DBF9700AB3981 /* Build configuration list for PBXNativeTarget "MNPageViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3945BE6E179DBF9700AB3981 /* Debug */,
+				3945BE6F179DBF9700AB3981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3945BE70179DBF9700AB3981 /* Build configuration list for PBXNativeTarget "MNPageViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3945BE71179DBF9700AB3981 /* Debug */,
+				3945BE72179DBF9700AB3981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3945BE42179DBF9700AB3981 /* Project object */;
+}
