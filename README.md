@@ -12,8 +12,8 @@ Basic usage:
 
 MNPageViewController provides delegate callbacks with a ratio variable from 0.f - 1.f on how far the controller is away from the center of the screen. This allows you to create custom transitions from controller to controller.
 		
-		- (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageToViewController:(MNViewController *)viewController withRatio:(CGFloat)ratio;
-		- (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageFromViewController:(MNViewController *)viewController withRatio:(CGFloat)ratio;
+    - (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageToViewController:(MNViewController *)viewController withRatio:(CGFloat)ratio;
+    - (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageFromViewController:(MNViewController *)viewController withRatio:(CGFloat)ratio;
 
 
 ## Installation
