@@ -16,6 +16,10 @@ MNPageViewController provides delegate callbacks with a ratio variable from 0.f 
     - (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageFromViewController:(MNViewController *)viewController withRatio:(CGFloat)ratio;
 
 
+## Example
+
+![pretty output](http://f.cl.ly/items/3O2T0f2a342r2C212803/MNPageViewController@2x.gif)
+
 ## Installation
 
 1. Add MNPageViewController as a submodule by running the following command from the root of your project
