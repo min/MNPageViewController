@@ -3,9 +3,9 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "A horizontal scroll view container for UIViewControllers."
   s.homepage     = "https://github.com/min/MNPageViewController"
-  s.license      = 'MIT'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Min Kim" => "me@mink.im" }
-  s.source       = { :git => "https://github.com/min/MNPageViewController.git", :branch => "master", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/min/MNPageViewController.git", :branch => "master", :tag => "#{s.version}" }
   s.platform     = :ios, '6.0'
   s.frameworks   = 'UIKit', 'CoreGraphics'
   s.source_files = 'MNPageViewController', 'MNPageViewController/**/*.{h,m}'
