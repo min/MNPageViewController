@@ -26,17 +26,17 @@
     } else if (ratio < 0.f) {
       diff = ratio - 0.f;
     }
-    
-    self.contentOffset = CGPointMake(offset.x * (1 + diff), self.contentOffset.y);
-    
+
     if (ratio >= 2.f) {
       if (self.delegate && [self.delegate respondsToSelector:@selector(queuingScrollViewDidPageForward:)]) {
         [self.delegate queuingScrollViewDidPageForward:self];
       }
+      self.contentOffset = CGPointMake(offset.x * (1 + diff), self.contentOffset.y);
     } else if (ratio <= 0.f) {
       if (self.delegate && [self.delegate respondsToSelector:@selector(queuingScrollViewDidPageBackward:)]) {
         [self.delegate queuingScrollViewDidPageBackward:self];
       }
+      self.contentOffset = CGPointMake(offset.x * (1 + diff), self.contentOffset.y);
     }
   }
 }

@@ -13,8 +13,9 @@
 
 @property (nonatomic,strong,readwrite) UIScrollView *scrollView;
 
-@property (nonatomic,assign,getter = hasInitialized) BOOL initialized;
-@property (nonatomic,assign,getter = isRotating)     BOOL rotating;
+@property (nonatomic,assign,getter = hasInitialized)  BOOL initialized;
+@property (nonatomic,assign,getter = isRotating)      BOOL rotating;
+@property (nonatomic,assign,getter = isTransitioning) BOOL transitioning;
 
 @property (nonatomic,assign) CGFloat leftInset;
 @property (nonatomic,assign) CGFloat rightInset;
@@ -104,7 +105,7 @@
   
   bounds.origin.x = bounds.size.width;
   self.viewController.view.frame = bounds;
-  
+
   self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
 }
 
@@ -169,14 +170,15 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  if (self.isRotating) {
+  if (self.isRotating || self.isTransitioning) {
     return;
   }
   if (!self.hasInitialized && self.scrollView.superview) {
     [self initializeChildControllers];
+
     self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
   } else {
-    if (scrollView.tracking && scrollView.dragging) {
+    if (!scrollView.decelerating) {
       self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
     }
   }
@@ -187,17 +189,20 @@
     return;
   }
   
+  if (CGRectIsEmpty(bounds)) {
+    return;
+  }
   UIViewController *controller =
   scrollView.contentOffset.x > bounds.size.width ? self.afterController : self.beforeController;
   
   CGFloat ratio = fabs((scrollView.contentOffset.x - bounds.size.width) / bounds.size.width);
   
   if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:willPageToViewController:withRatio:)]) {
-    [self.delegate mn_pageViewController:self willPageToViewController:controller withRatio:ratio];
+    [self.delegate mn_pageViewController:self willPageToViewController:controller withRatio:MIN(ratio, 1.f)];
   }
   
   if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:willPageFromViewController:withRatio:)]) {
-    [self.delegate mn_pageViewController:self willPageFromViewController:self.viewController withRatio:1.f - ratio];
+    [self.delegate mn_pageViewController:self willPageFromViewController:self.viewController withRatio:MAX(1.f - ratio, 0.f)];
   }
 }
 
@@ -206,13 +211,26 @@
     return;
   }
   self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
+
+  for (UIViewController *controller in self.childViewControllers) {
+    if (controller == self.viewController) {
+      if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:willPageToViewController:withRatio:)]) {
+        [self.delegate mn_pageViewController:self willPageToViewController:controller withRatio:1.f];
+      }
+    } else {
+      if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:willPageFromViewController:withRatio:)]) {
+        [self.delegate mn_pageViewController:self willPageFromViewController:self.viewController withRatio:1.f];
+      }
+    }
+  }
 }
 
 #pragma mark - MNQueuingScrollViewDelegate
 
 - (void)queuingScrollViewDidPageForward:(UIScrollView *)scrollView {
+  self.transitioning = YES;
   UIViewController *nextViewController = nil;
-  
+
   CGRect frame;
   CGRect scrollBounds = self.scrollView.bounds;
   
@@ -258,11 +276,13 @@
   if (!scrollView.decelerating) {
     self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
   }
-  
+
   [self didPage];
+  self.transitioning = NO;
 }
 
 - (void)queuingScrollViewDidPageBackward:(UIScrollView *)scrollView {
+  self.transitioning = YES;
   UIViewController *nextViewController = nil;
   
   CGRect frame;
@@ -307,8 +327,9 @@
   if (!scrollView.decelerating) {
     self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
   }
-  
+
   [self didPage];
+  self.transitioning = NO;
 }
 
 @end
