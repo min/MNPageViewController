@@ -15,7 +15,6 @@
 
 @property (nonatomic,assign,getter = hasInitialized)  BOOL initialized;
 @property (nonatomic,assign,getter = isRotating)      BOOL rotating;
-@property (nonatomic,assign,getter = isTransitioning) BOOL transitioning;
 
 @property (nonatomic,assign) CGFloat leftInset;
 @property (nonatomic,assign) CGFloat rightInset;
@@ -170,7 +169,7 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  if (self.isRotating || self.isTransitioning) {
+  if (self.isRotating) {
     return;
   }
   if (!self.hasInitialized && self.scrollView.superview) {
@@ -178,7 +177,7 @@
 
     self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
   } else {
-    if (!scrollView.decelerating) {
+    if (scrollView.tracking && scrollView.dragging) {
       self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
     }
   }
@@ -228,7 +227,6 @@
 #pragma mark - MNQueuingScrollViewDelegate
 
 - (void)queuingScrollViewDidPageForward:(UIScrollView *)scrollView {
-  self.transitioning = YES;
   UIViewController *nextViewController = nil;
 
   CGRect frame;
@@ -278,11 +276,9 @@
   }
 
   [self didPage];
-  self.transitioning = NO;
 }
 
 - (void)queuingScrollViewDidPageBackward:(UIScrollView *)scrollView {
-  self.transitioning = YES;
   UIViewController *nextViewController = nil;
   
   CGRect frame;
@@ -329,7 +325,6 @@
   }
 
   [self didPage];
-  self.transitioning = NO;
 }
 
 @end
