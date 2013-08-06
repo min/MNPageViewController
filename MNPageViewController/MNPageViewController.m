@@ -128,7 +128,10 @@
        viewControllerAfterViewController:self.viewController];
   
   if (self.beforeController) {
-    self.beforeController.view.frame = bounds;
+    CGRect beforeFrame = self.scrollView.bounds;
+    beforeFrame.origin.x = 0.f;
+
+    self.beforeController.view.frame = beforeFrame;
     [self addChildViewController:self.beforeController];
     [self.scrollView addSubview:self.beforeController.view];
     [self.beforeController didMoveToParentViewController:self];
