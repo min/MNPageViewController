@@ -52,9 +52,10 @@
   if (self.viewController) {
     CGRect bounds = self.view.bounds;
     bounds.origin.x = bounds.size.width;
-    
-    self.viewController.view.frame = bounds;
+
+    [self.viewController willMoveToParentViewController:self];
     [self addChildViewController:self.viewController];
+    self.viewController.view.frame = bounds;
     [self.scrollView addSubview:self.viewController.view];
     [self.viewController didMoveToParentViewController:self];
     
