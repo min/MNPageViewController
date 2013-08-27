@@ -52,9 +52,10 @@
   if (self.viewController) {
     CGRect bounds = self.view.bounds;
     bounds.origin.x = bounds.size.width;
-    
-    self.viewController.view.frame = bounds;
+
+    [self.viewController willMoveToParentViewController:self];
     [self addChildViewController:self.viewController];
+    self.viewController.view.frame = bounds;
     [self.scrollView addSubview:self.viewController.view];
     [self.viewController didMoveToParentViewController:self];
     
@@ -131,8 +132,9 @@
     CGRect beforeFrame = self.scrollView.bounds;
     beforeFrame.origin.x = 0.f;
 
-    self.beforeController.view.frame = beforeFrame;
+    [self.beforeController willMoveToParentViewController:self];
     [self addChildViewController:self.beforeController];
+    self.beforeController.view.frame = beforeFrame;
     [self.scrollView addSubview:self.beforeController.view];
     [self.beforeController didMoveToParentViewController:self];
   } else {
@@ -141,9 +143,10 @@
   if (self.afterController) {
     CGRect afterFrame = self.scrollView.bounds;
     afterFrame.origin.x = afterFrame.size.width * 2.f;
-    
-    self.afterController.view.frame = afterFrame;
+
+    [self.afterController willMoveToParentViewController:self];
     [self addChildViewController:self.afterController];
+    self.afterController.view.frame = afterFrame;
     [self.scrollView addSubview:self.afterController.view];
     [self.afterController didMoveToParentViewController:self];
   } else {
