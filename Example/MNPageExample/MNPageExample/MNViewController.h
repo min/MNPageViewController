@@ -10,9 +10,9 @@
 
 @interface MNViewController : UIViewController
 
-@property(nonatomic,strong,readonly) UIColor *color;
+@property(nonatomic,readonly) UIColor *color;
 
-- (id)initWithColor:(UIColor *)color;
+- (id)initWithColor:(UIColor *)color atIndex:(NSInteger)index;
 
 - (void)setRatio:(CGFloat)ratio;
 

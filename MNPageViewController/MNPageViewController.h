@@ -13,9 +13,9 @@
 
 @interface MNPageViewController : UIViewController
 
-@property(nonatomic,strong,readonly) UIScrollView *scrollView;
+@property(nonatomic,readonly) UIScrollView *scrollView;
 
-@property(nonatomic,strong) UIViewController *viewController;
+@property(nonatomic) UIViewController *viewController;
 
 @property(nonatomic,weak) id <MNPageViewControllerDataSource> dataSource;
 @property(nonatomic,weak) id <MNPageViewControllerDelegate>   delegate;
@@ -40,8 +40,6 @@
 
 - (void)mn_pageViewController:(MNPageViewController *)pageViewController didPageToViewController:(UIViewController *)viewController;
 
-- (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageToViewController:(UIViewController *)viewController withRatio:(CGFloat)ratio;
-
-- (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageFromViewController:(UIViewController *)viewController withRatio:(CGFloat)ratio;
+- (void)mn_pageViewController:(MNPageViewController *)pageViewController didScrollViewController:(UIViewController *)viewController withRatio:(CGFloat)ratio;
 
 @end
