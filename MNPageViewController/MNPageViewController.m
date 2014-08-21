@@ -41,7 +41,7 @@
     scrollView.delegate = self;
     scrollView.contentOffset = CGPointMake(bounds.size.width, 0.f);
     self.scrollView = scrollView;
-    
+
     [self.view addSubview:self.scrollView];
     
     self.initialized = NO;
@@ -69,7 +69,7 @@
     [super viewWillLayoutSubviews];
     
     self.scrollView.frame = self.view.bounds;
-
+    
     [self layoutControllers];
 }
 
@@ -93,6 +93,14 @@
 
 - (UIViewController *)childViewControllerForStatusBarStyle {
     return self.viewController;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
 }
 
 #pragma mark - Private
@@ -140,6 +148,7 @@
 - (void)layoutControllers {
     CGRect bounds = self.view.bounds;
     
+    self.scrollView.frame = bounds;
     self.scrollView.contentOffset = CGPointMake(bounds.size.width, 0.f);
     
     if (self.beforeController) {

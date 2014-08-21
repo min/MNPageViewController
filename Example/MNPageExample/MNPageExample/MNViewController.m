@@ -8,10 +8,34 @@
 
 #import "MNViewController.h"
 
+@interface MNColorView : UIView
+
+@property(nonatomic) UILabel *label;
+
+@end
+
+@implementation MNColorView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.label = [[UILabel alloc] initWithFrame:self.bounds];
+        self.label.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.label.font = [UIFont systemFontOfSize:144.f];
+        self.label.textColor = [UIColor whiteColor];
+        self.label.textAlignment = NSTextAlignmentCenter;
+
+        
+        [self addSubview:self.label];
+    }
+    return self;
+}
+
+@end
+
 @interface MNViewController ()
 
 @property(nonatomic) UIColor  *color;
-@property(nonatomic) UILabel  *colorView;
+@property(nonatomic) MNColorView *colorView;
 @property(nonatomic) NSInteger index;
 
 @end
@@ -29,13 +53,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.colorView = [[UILabel alloc] initWithFrame:self.view.bounds];
-    self.colorView.font = [UIFont systemFontOfSize:144.f];
-    self.colorView.textColor = [UIColor whiteColor];
-    self.colorView.textAlignment = NSTextAlignmentCenter;
-    self.colorView.text = @(self.index).stringValue;
+    self.colorView = [[MNColorView alloc] initWithFrame:self.view.bounds];
     self.colorView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.colorView.backgroundColor = self.color;
+    self.colorView.label.text = @(self.index).stringValue;
     
     [self.view addSubview:self.colorView];
 }
@@ -47,7 +68,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
-
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
