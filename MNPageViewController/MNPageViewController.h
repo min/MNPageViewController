@@ -11,11 +11,10 @@
 @protocol MNPageViewControllerDelegate;
 @protocol MNPageViewControllerDataSource;
 
-@interface MNPageViewController : UIViewController
+@interface MNPageViewController : UIViewController<UIScrollViewDelegate>
 
-@property(nonatomic,readonly) UIScrollView *scrollView;
-
-@property(nonatomic) UIViewController *viewController;
+@property(nonatomic,readonly) UIScrollView     *scrollView;
+@property(nonatomic)          UIViewController *viewController;
 
 @property(nonatomic,weak) id <MNPageViewControllerDataSource> dataSource;
 @property(nonatomic,weak) id <MNPageViewControllerDelegate>   delegate;
@@ -40,6 +39,9 @@
 
 - (void)mn_pageViewController:(MNPageViewController *)pageViewController didPageToViewController:(UIViewController *)viewController;
 
+// This method will be called for all visible view controllers with a ratio value from 0.f - 1.f on how close it is to the center of the screen.
 - (void)mn_pageViewController:(MNPageViewController *)pageViewController didScrollViewController:(UIViewController *)viewController withRatio:(CGFloat)ratio;
+
+- (void)mn_pageViewController:(MNPageViewController *)pageViewController willPageToViewController:(UIViewController *)viewController withRatio:(CGFloat)ratio;
 
 @end

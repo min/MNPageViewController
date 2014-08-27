@@ -41,7 +41,7 @@
     scrollView.delegate = self;
     scrollView.contentOffset = CGPointMake(bounds.size.width, 0.f);
     self.scrollView = scrollView;
-
+    
     [self.view addSubview:self.scrollView];
     
     self.initialized = NO;
@@ -191,25 +191,44 @@
             [self.delegate mn_pageViewController:self didScrollViewController:controller withRatio:1.f];
         }
     }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:willPageToViewController:withRatio:)]) {
+        [self.delegate mn_pageViewController:self willPageToViewController:self.viewController withRatio:1.f];
+    }
 }
 
 - (void)setNeedsRatioUpdate {
     CGRect bounds = self.scrollView.bounds;
-
-    CGFloat scrollRatio = ((self.scrollView.contentOffset.x - bounds.size.width) / bounds.size.width);
-
-    if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:didScrollViewController:withRatio:)]) {
+    
+    if (!self.delegate) {
+        return;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(mn_pageViewController:didScrollViewController:withRatio:)]) {
+        CGFloat scrollRatio = ((self.scrollView.contentOffset.x - bounds.size.width) / bounds.size.width);
+        
         for (UIViewController *controller in self.childViewControllers) {
             // um, this is ugly, need to refactor
             CGFloat ratio = fabs(1.f - fabs(fabs((controller.view.frame.origin.x - bounds.size.width) / bounds.size.width) - scrollRatio));
             [self.delegate mn_pageViewController:self didScrollViewController:controller withRatio:ratio];
         }
     }
+    
+    if ([self.delegate respondsToSelector:@selector(mn_pageViewController:willPageToViewController:withRatio:)]) {
+        UIViewController *controller =
+        self.scrollView.contentOffset.x > bounds.size.width ? self.afterController : self.beforeController;
+        
+        CGFloat ratio = fabs((self.scrollView.contentOffset.x - bounds.size.width) / bounds.size.width);
+        
+        [self.delegate mn_pageViewController:self willPageToViewController:controller withRatio:ratio];
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView != self.scrollView) {
+        return;
+    }
     if (self.isRotating) {
         return;
     }
@@ -236,6 +255,9 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (scrollView != self.scrollView) {
+        return;
+    }
     if (self.isRotating) {
         return;
     }
