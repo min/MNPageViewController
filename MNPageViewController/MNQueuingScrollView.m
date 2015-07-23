@@ -9,6 +9,7 @@
 #import "MNQueuingScrollView.h"
 
 @implementation MNQueuingScrollView
+@dynamic delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
