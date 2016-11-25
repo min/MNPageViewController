@@ -24,7 +24,7 @@
 
 - (void)initializeChildControllers;
 - (void)layoutControllers;
-- (void)didPage;
+- (void)didPageTo: (UIViewController *)viewController;
 - (void)setNeedsRatioReset;
 - (void)setNeedsRatioUpdate;
 
@@ -47,7 +47,7 @@
     self.initialized = NO;
     
     if (self.viewController) {
-        CGRect bounds = self.view.bounds;
+        bounds = self.view.bounds;
         bounds.origin.x = bounds.size.width;
         
         [self.viewController willMoveToParentViewController:self];
@@ -170,18 +170,9 @@
     self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
 }
 
-- (void)didPage {
-    UIViewController *visibleController = nil;
-    for (UIViewController *controller in self.childViewControllers) {
-        CGPoint point = [self.scrollView convertPoint:controller.view.frame.origin toView:self.view];
-        
-        if (point.x == 0.f) {
-            visibleController = controller;
-        }
-    }
-    
+- (void)didPageTo: (UIViewController *)viewController {
     if (self.delegate && [self.delegate respondsToSelector:@selector(mn_pageViewController:didPageToViewController:)]) {
-        [self.delegate mn_pageViewController:self didPageToViewController:visibleController];
+        [self.delegate mn_pageViewController:self didPageToViewController:viewController];
     }
 }
 
@@ -318,7 +309,7 @@
         self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
     }
     
-    [self didPage];
+    [self didPageTo:nextViewController];
 }
 
 - (void)queuingScrollViewDidPageBackward:(UIScrollView *)scrollView {
@@ -367,7 +358,7 @@
         self.scrollView.contentInset = UIEdgeInsetsMake(0.f, self.leftInset, 0.f, self.rightInset);
     }
     
-    [self didPage];
+    [self didPageTo:nextViewController];
 }
 
 @end
